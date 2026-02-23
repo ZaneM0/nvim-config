@@ -277,7 +277,11 @@ require("lazy").setup({
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			local servers = {
-				clangd = { "clangd", "--background-index", "--clang-tidy", "--header-insertion=never" },
+				clangd = {
+					cmd = { "clangd", "--background-index", "--clang-tidy", "--header-insertion=never" },
+				},
+
+				pyright = {},
 
 				verible = {
 					-- Configuration is automatically passed to lspconfig
